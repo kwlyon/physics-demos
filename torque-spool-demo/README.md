@@ -20,8 +20,8 @@ and therefore
 
 $$
 \theta_\mathrm{c}
-= \cos^{-1}\!\left(\frac{r}{R}\right)
-= \cos^{-1}\!\left(\frac{2r}{D}\right).
+= \cos^{-1}\left(\frac{r}{R}\right)
+= \cos^{-1}\left(\frac{2r}{D}\right).
 $$
 
 Below this angle the spool rolls one way; above it, the torque reverses and the spool rolls the other way. For the most precise experimental prediction, $r$ is the radius to the cord's centerline rather than merely the bare insert surface. The labeled insert sizes use the surface-radius convention described below.
@@ -33,8 +33,8 @@ For the 45° insert, the tire-on outside diameter is $D = 185.0\,\mathrm{mm}$, s
 $$
 \begin{aligned}
 \theta_\mathrm{c}
-&= \cos^{-1}\!\left(\frac{r}{R}\right) \\
-&= \cos^{-1}\!\left(\frac{65.407\,\mathrm{mm}}{92.5\,\mathrm{mm}}\right) \\
+&= \cos^{-1}\left(\frac{r}{R}\right) \\
+&= \cos^{-1}\left(\frac{65.407\,\mathrm{mm}}{92.5\,\mathrm{mm}}\right) \\
 &= 45.00^\circ.
 \end{aligned}
 $$
