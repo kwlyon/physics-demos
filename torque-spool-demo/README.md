@@ -41,6 +41,8 @@ $$
 
 Thus the modeled dimensions reproduce the nominal 45° critical angle before correcting for cord thickness.
 
+> **Illustrated walkthrough:** [Open the complete physics handout (PDF)](output/pdf/torque_spool_physics_walkthrough.pdf), including free-body diagrams, the critical-angle derivation, the 45° numerical check, cord-thickness corrections, and a suggested classroom procedure. The editable [LaTeX/TikZ source](output/pdf/torque_spool_physics_walkthrough.tex) is included alongside it.
+
 ### Designed insert sizes
 
 | Label | Designed surface radius | Diameter | Nominal shell thickness | Plastic-flange clearance |
@@ -122,6 +124,8 @@ The generator requires Python with `numpy`, `trimesh`, `manifold3d`, and `matplo
 - `VALIDATION.md` and `validation_report.json` — human-readable and machine-readable results.
 - `design_manifest.json` — exact dimensions, labels, and part metadata.
 - `ROPE_HOOK.md` and `rope_hook_validation.json` — hook instructions and generated mesh checks.
+- `output/pdf/torque_spool_physics_walkthrough.pdf` — illustrated physics handout linked from the 45° example above.
+- `output/pdf/torque_spool_physics_walkthrough.tex` — editable LaTeX and TikZ source for the handout.
 - `Spool_Paradox_Bambu_Print_Kit/` — the original supplied spool STLs, OpenSCAD source, preview, and assembly README.
 - `renders/` — assembly, plug/socket, anchor, edge-label, exterior-label, size-comparison, and sectional views.
 

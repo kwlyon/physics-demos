@@ -1,0 +1,234 @@
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper,margin=0.72in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage{fancyhdr}
+
+\definecolor{navy}{HTML}{163A5F}
+\definecolor{blueaccent}{HTML}{2474A6}
+\definecolor{orangeaccent}{HTML}{D97706}
+\definecolor{softblue}{HTML}{EAF3F8}
+\definecolor{softgray}{HTML}{F3F5F7}
+\definecolor{darkgray}{HTML}{38434F}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textcolor{navy}{\small Torque-Spool Demonstration}}
+\rhead{\textcolor{darkgray}{\small Physics Walkthrough}}
+\cfoot{\textcolor{darkgray}{\thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{14pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[itemize]{leftmargin=1.35em,itemsep=2pt,topsep=3pt}
+
+\newcommand{\keybox}[1]{%
+  \begin{center}
+  \fcolorbox{blueaccent}{softblue}{%
+    \begin{minipage}{0.88\linewidth}
+    \centering\vspace{3pt}#1\vspace{3pt}
+    \end{minipage}}
+  \end{center}}
+
+\begin{document}
+
+\begin{center}
+  {\color{navy}\LARGE\bfseries Why Does the Spool Reverse Direction?}\par
+  \vspace{3pt}
+  {\large A torque and geometry walkthrough for the adjustable spool-paradox demonstration}\par
+  \vspace{5pt}
+  {\color{darkgray}\small Tire-on outer diameter: $D=185.0\,\mathrm{mm}$ \quad | \quad rolling radius: $R=92.5\,\mathrm{mm}$}
+\end{center}
+
+\section*{1. The surprising observation}
+
+A cord is wound around an inner cylinder of radius $r$ while the spool rolls on outer tires of radius $R$. Pull the cord at an angle $\theta$ above the horizontal. Depending on $\theta$, the spool can roll either toward or away from the pull. At one particular angle, called the \emph{critical angle} $\theta_{\mathrm c}$, the direction reverses.
+
+The cleanest way to predict that transition is to calculate torque about the point $P$ where the tire touches the floor. This choice removes the unknown normal force and static-friction force from the torque equation because both act at $P$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.02,>=Latex,font=\small]
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (0,-2.55);
+  \coordinate (T) at (0.80,-1.14);
+
+  \fill[softblue] (O) circle (2.55);
+  \draw[navy,very thick] (O) circle (2.55);
+  \fill[white] (O) circle (1.39);
+  \draw[blueaccent,very thick] (O) circle (1.39);
+  \draw[darkgray,thick] (-3.25,-2.55)--(3.85,-2.55);
+  \fill[navy] (O) circle (1.6pt) node[above left] {$O$};
+  \fill[orangeaccent] (P) circle (2pt) node[below] {$P$};
+  \fill[blueaccent] (T) circle (1.6pt) node[below left] {$A$};
+
+  \draw[orangeaccent,very thick,-{Latex[length=3mm]}] (T)--++(3.0,2.10)
+    node[pos=0.73,above] {tension $\vec T$};
+  \draw[orangeaccent,thick] ($(T)+(-0.65,-0.455)$)--(T);
+  \draw[navy,very thick,-{Latex[length=3mm]}] (O)--++(0,-2.0)
+    node[midway,left] {$M\vec g$};
+  \draw[blueaccent,very thick,-{Latex[length=3mm]}] (P)--++(0,1.15)
+    node[pos=0.56,right] {$\vec N$};
+  \draw[blueaccent,very thick,-{Latex[length=3mm]}] (P)--++(-1.35,0)
+    node[midway,below] {$\vec f_s$};
+
+  \draw[<->,darkgray] (-2.83,0)--(-2.83,-2.55)
+    node[midway,left] {$R$};
+  \draw[<->,darkgray] (O)--(T)
+    node[midway,above left] {$r$};
+  \draw[darkgray,dashed] (P)--(O);
+  \node[align=left,text width=5.0cm,anchor=west] at (4.25,0.35) {
+    \textbf{Forces on the spool}\\[3pt]
+    $M\vec g$: weight through the center\\
+    $\vec N$: floor normal at $P$\\
+    $\vec f_s$: static friction at $P$\\
+    $\vec T$: pull along the cord\\[5pt]
+    About $P$, the first three forces have zero moment arm. Only the cord tension determines the sign of the torque.
+  };
+\end{tikzpicture}
+\end{center}
+
+\keybox{\textbf{Key idea:} the spool reverses when the line of action of $\vec T$ passes through the floor-contact point $P$.}
+
+\newpage
+\thispagestyle{plain}
+\noindent\textcolor{navy}{\small Torque-Spool Demonstration}%
+\hfill\textcolor{darkgray}{\small Physics Walkthrough}\par
+\vspace{2pt}\hrule\vspace{17pt}
+\section*{2. Deriving the critical angle}
+
+At the transition, extend the cord's line of action backward. It passes exactly through $P$ and remains tangent to the winding cylinder at $A$. The radius $OA$ is perpendicular to the tangent line, so triangle $OAP$ is right-angled at $A$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.15,>=Latex,font=\small]
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (0,-2.8);
+  \coordinate (A) at (1.4,-1.4);
+
+  \fill[softblue] (O) circle (2.8);
+  \draw[navy,very thick] (O) circle (2.8);
+  \fill[white] (O) circle (1.98);
+  \draw[blueaccent,very thick] (O) circle (1.98);
+  \draw[darkgray,thick] (-3.35,-2.8)--(4.0,-2.8);
+  \draw[orangeaccent,very thick,-{Latex[length=3mm]}] (P)--(4.2,1.4)
+    node[pos=0.86,above left] {$\vec T$};
+  \draw[darkgray,dashed,thick] (O)--(A);
+  \draw[darkgray,dashed,thick] (O)--(P);
+  \fill[navy] (O) circle (1.7pt) node[above left] {$O$};
+  \fill[orangeaccent] (P) circle (2pt) node[below] {$P$};
+  \fill[blueaccent] (A) circle (1.7pt) node[above left] {$A$};
+
+  \node[left] at (-0.05,-1.4) {$R$};
+  \node[above right] at (0.67,-0.63) {$r$};
+  \draw[darkgray] ($(P)+(0.72,0)$) arc[start angle=0,end angle=45,radius=0.72];
+  \node at ($(P)+(0.98,0.38)$) {$\theta_{\mathrm c}$};
+  \draw[darkgray,thick] ($(A)+(-0.14,0.14)$)--($(A)+(0,0.28)$)--($(A)+(0.14,0.14)$);
+
+  \node[align=left,text width=5.2cm,anchor=west] at (4.65,0.25) {
+    In right triangle $OAP$:
+    \[
+      OP=R,\qquad OA=r.
+    \]
+    Since $\angle OPA=90^\circ-\theta_{\mathrm c}$,
+    \[
+      \frac{r}{R}
+      =\sin(90^\circ-\theta_{\mathrm c})
+      =\cos\theta_{\mathrm c}.
+    \]
+  };
+\end{tikzpicture}
+\end{center}
+
+Solving for the critical angle gives the design equation
+
+\keybox{\LARGE $\displaystyle
+\theta_{\mathrm c}
+=\cos^{-1}\left(\frac{r}{R}\right)
+=\cos^{-1}\left(\frac{2r}{D}\right).$}
+
+The same result follows from the perpendicular moment arm of the tension. If $d_T$ is the signed distance from $P$ to the cord's line of action, then
+\[
+  \tau_P=T d_T.
+\]
+As the pull angle crosses $\theta_{\mathrm c}$, $d_T$ changes sign. The torque from the pull therefore changes sign, producing the observed reversal.
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Pull angle & Line of action relative to $P$ & Tendency \\
+\midrule
+$\theta<\theta_{\mathrm c}$ & one side of $P$ & rotation in one sense \\
+$\theta=\theta_{\mathrm c}$ & through $P$ & zero torque from tension \\
+$\theta>\theta_{\mathrm c}$ & opposite side of $P$ & reversed rotation \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\newpage
+\section*{3. Numerical check for the 45-degree insert}
+
+The measured outside diameter of the installed TPU tires and the corresponding rolling radius are
+\[
+  D=185.0\,\mathrm{mm},
+  \qquad
+  R=\frac{D}{2}=92.5\,\mathrm{mm}.
+\]
+The 45-degree insert has a designed winding-surface radius
+\[
+  r=65.407\,\mathrm{mm}
+  \qquad
+  \left(2r=130.815\,\mathrm{mm}\right).
+\]
+Therefore,
+\[
+\begin{aligned}
+  \theta_{\mathrm c}
+  &=\cos^{-1}\left(\frac{r}{R}\right)\\[2pt]
+  &=\cos^{-1}\left(\frac{65.407\,\mathrm{mm}}{92.5\,\mathrm{mm}}\right)\\[2pt]
+  &=45.00^\circ.
+\end{aligned}
+\]
+
+\keybox{The modeled 45-degree insert reproduces a $45.00^\circ$ critical angle when $r$ is taken at the bare winding surface.}
+
+\section*{4. What changes in a real demonstration?}
+
+The cord does not act at the bare plastic surface. For cord diameter $d$, the first-layer cord centerline is approximately
+\[
+  r_{\mathrm{eff}}=r+\frac{d}{2}.
+\]
+For example, a $2.0\,\mathrm{mm}$ cord on the 45-degree insert gives
+\[
+  r_{\mathrm{eff}}=66.407\,\mathrm{mm},
+  \qquad
+  \theta_{\mathrm c,eff}
+  =\cos^{-1}\left(\frac{66.407}{92.5}\right)
+  \approx44.12^\circ.
+\]
+Additional winding layers increase $r_{\mathrm{eff}}$ further and reduce the predicted critical angle.
+
+\section*{5. Suggested classroom procedure}
+
+\begin{enumerate}[leftmargin=1.55em,itemsep=3pt,topsep=3pt]
+  \item Install the 45-degree insert and both TPU tires. Use a thin cord in a single neat layer.
+  \item Pull slowly at an angle clearly below $45^\circ$ and note the rolling direction.
+  \item Repeat clearly above $45^\circ$ and observe the reversal.
+  \item Approach the transition in small angular steps. Compare the measured angle with $45.00^\circ$, or with the cord-corrected prediction if the cord diameter is known.
+  \item Discuss why choosing the floor-contact point for the torque calculation eliminates the normal and friction forces from the rotational analysis.
+\end{enumerate}
+
+\vfill
+\begin{center}
+\small\color{darkgray}
+Model assumptions: rigid spool, level floor, no slipping at the tire contact, taut cord tangent to the winding cylinder, and negligible deformation. Dimensions correspond to the supplied spool with both TPU tires installed.
+\end{center}
+
+\end{document}
