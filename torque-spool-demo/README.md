@@ -6,29 +6,38 @@ It also includes two low-profile rope-hook accessories. Their tapered J-shaped n
 
 ## Physics and final sizes
 
-With both supplied TPU tires installed, the measured outer rolling-wheel diameter is **185.0 mm**, giving an outer rolling radius of **92.5 mm**.
+With both supplied TPU tires installed, the measured outer rolling-wheel diameter is $D = 185.0\,\mathrm{mm}$, giving an outer rolling radius of $R = 92.5\,\mathrm{mm}$.
 
 ### Predicting the critical angle
 
-Let `D` be the outside diameter of the tire, `R = D/2` the rolling radius, `r` the winding radius, and `theta_c` the critical pull angle measured above horizontal. At the critical angle, the cord's line of action passes through the spool's contact point with the floor. The pull therefore produces no torque about that contact point. The geometry gives
+Let $D$ be the outside diameter of the tire, $R = D/2$ the rolling radius, $r$ the winding radius, and $\theta_\mathrm{c}$ the critical pull angle measured above horizontal. At the critical angle, the cord's line of action passes through the spool's contact point with the floor. The pull therefore produces no torque about that contact point. The geometry gives
 
-```text
-r = R cos(theta_c)
+$$
+r = R\cos\left(\theta_\mathrm{c}\right)
+$$
 
-theta_c = cos^-1(r/R) = cos^-1(2r/D)
-```
+and therefore
 
-Below this angle the spool rolls one way; above it, the torque reverses and the spool rolls the other way. For the most precise experimental prediction, `r` is the radius to the cord's centerline rather than merely the bare insert surface. The labeled insert sizes use the surface-radius convention described below.
+$$
+\theta_\mathrm{c}
+= \cos^{-1}\!\left(\frac{r}{R}\right)
+= \cos^{-1}\!\left(\frac{2r}{D}\right).
+$$
+
+Below this angle the spool rolls one way; above it, the torque reverses and the spool rolls the other way. For the most precise experimental prediction, $r$ is the radius to the cord's centerline rather than merely the bare insert surface. The labeled insert sizes use the surface-radius convention described below.
 
 ### Worked check: 45° insert
 
-For the 45° insert, the tire-on outside diameter is `D = 185.0 mm`, so `R = 92.5 mm`. The designed winding-surface radius is `r = 65.407 mm` (a winding diameter of `130.815 mm`). Substitution gives
+For the 45° insert, the tire-on outside diameter is $D = 185.0\,\mathrm{mm}$, so $R = 92.5\,\mathrm{mm}$. The designed winding-surface radius is $r = 65.407\,\mathrm{mm}$ (a winding diameter of $130.815\,\mathrm{mm}$). Substitution gives
 
-```text
-theta_c = cos^-1(r/R)
-        = cos^-1(65.407 mm / 92.5 mm)
-        = 45.00 degrees
-```
+$$
+\begin{aligned}
+\theta_\mathrm{c}
+&= \cos^{-1}\!\left(\frac{r}{R}\right) \\
+&= \cos^{-1}\!\left(\frac{65.407\,\mathrm{mm}}{92.5\,\mathrm{mm}}\right) \\
+&= 45.00^\circ.
+\end{aligned}
+$$
 
 Thus the modeled dimensions reproduce the nominal 45° critical angle before correcting for cord thickness.
 
@@ -51,7 +60,7 @@ The shallow exterior recess leaves the exact nominal winding radius on all surro
 
 ### Cord-centerline convention
 
-The labels refer to the physical cylinder surface, as requested. For a cord of diameter `d`, the first-layer cord-centerline radius is approximately `r + d/2`. Thus a 2.0 mm cord would shift the ideal angles to approximately 28.74°, 39.03°, 44.12°, 49.19°, and 59.28°. Additional winding layers increase the effective radius further. Use a thin single layer when demonstrating the labeled values.
+The labels refer to the physical cylinder surface, as requested. For a cord of diameter $d$, the first-layer cord-centerline radius is approximately $r + d/2$. Thus a 2.0 mm cord would shift the ideal angles to approximately 28.74°, 39.03°, 44.12°, 49.19°, and 59.28°. Additional winding layers increase the effective radius further. Use a thin single layer when demonstrating the labeled values.
 
 ## Printing
 
