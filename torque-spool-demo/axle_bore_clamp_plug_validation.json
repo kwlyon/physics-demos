@@ -12,6 +12,7 @@
     "flange_diameter_mm": 44.0,
     "flange_thickness_mm": 5.0,
     "sealed_end_wall_mm": 3.0,
+    "vent_hole_diameter_mm": 2.0,
     "flange_sides": 12,
     "sleeve_reach_from_flange_mm": 66.0,
     "male_thread_tube_inner_diameter_mm": 23.8,
@@ -23,26 +24,53 @@
     "male_shoulder_start_from_outer_face_mm": 48.0,
     "thread_start_from_outer_face_mm": 49.5,
     "thread_end_from_outer_face_mm": 69.5,
-    "pair_center_spacing_mm": 58.0,
     "circular_segments": 128,
     "thread_divisions_per_turn": 90
   },
-  "output_file": "Axle_Bore_Clamp_Plugs_print_1set.stl",
-  "vertices": 33026,
-  "triangles": 66044,
-  "body_count": 2,
-  "watertight": true,
-  "winding_consistent": true,
-  "mesh_extents_mm": [
-    102.0,
-    44.0,
-    71.0
+  "output_files": [
+    "Axle_Bore_Clamp_Plug_MALE_print_1x.stl",
+    "Axle_Bore_Clamp_Plug_FEMALE_print_1x.stl"
   ],
-  "volume_set_mm3": 46355.09819277943,
+  "parts": {
+    "male": {
+      "output_file": "Axle_Bore_Clamp_Plug_MALE_print_1x.stl",
+      "vertices": 14085,
+      "triangles": 28170,
+      "body_count": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_extents_mm": [
+        44.0,
+        44.0,
+        71.0
+      ],
+      "volume_mm3": 21537.701592130838
+    },
+    "female": {
+      "output_file": "Axle_Bore_Clamp_Plug_FEMALE_print_1x.stl",
+      "vertices": 19458,
+      "triangles": 38916,
+      "body_count": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "mesh_extents_mm": [
+        44.0,
+        44.0,
+        71.0
+      ],
+      "volume_mm3": 24798.557471153108
+    }
+  },
+  "body_count_total": 2,
+  "both_parts_watertight": true,
+  "both_parts_winding_consistent": true,
+  "volume_set_mm3": 46336.25906328394,
   "sleeve_radial_clearance_mm": 0.3000000000000007,
   "sleeve_overlap_when_seated_mm": 20.0,
   "thread_engagement_when_seated_mm": 18.5,
   "minimum_continuous_shot_diameter_mm": 23.8,
+  "centered_vent_hole_diameter_mm": 2.0,
+  "vent_holes_require_sealing_before_filling": true,
   "available_bore_void_mm3": 79032.5387711064,
   "available_bore_void_percent": 69.35335132328532,
   "best_seated_thread_phase_deg": 0.0,

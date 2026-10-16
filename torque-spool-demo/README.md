@@ -4,7 +4,7 @@ This directory contains five reusable, two-piece insert sets for the supplied sp
 
 It also includes two low-profile rope-hook accessories. Their tapered J-shaped noses thread beside the recessed anchor post and rotate around it; the tangent tail then lies back against the winding surface. A raised 5.2 mm eyelet on the tail provides an easier place to tie the rope. Use the 6.2 mm-post hook for the original spool and the 30°/40°/45°/50° inserts, and the 4.0 mm-post hook for the thinner 60° insert. See `ROPE_HOOK.md` for installation and printing details.
 
-For demonstrations needing more mass near the rotation axis, `Axle_Bore_Clamp_Plugs_print_1set.stl` contains a rigid male/female cap set for the original spool's 36.0 mm through-bore. Hollow 35.4 mm sleeves follow the bore wall and screw together near the center, leaving a 30.0 mm shot cavity through most of the spool and a 23.8 mm minimum passage at the thread. Thick outside flanges seal both ends and cannot work loose independently. See `AXLE_BORE_CLAMP_PLUGS.md` for dimensions, printing, dry fitting, filling, tuning, and lead-safety guidance.
+For demonstrations needing more mass near the rotation axis, `Axle_Bore_Clamp_Plug_MALE_print_1x.stl` and `Axle_Bore_Clamp_Plug_FEMALE_print_1x.stl` form a rigid cap set for the original spool's 36.0 mm through-bore. Hollow 35.4 mm sleeves follow the bore wall and screw together near the center, leaving a 30.0 mm shot cavity through most of the spool and a 23.8 mm minimum passage at the thread. Each cap has a centered 2.0 mm resin-printing vent that must be sealed before filling. Thick outside flanges close both ends and cannot work loose independently. See `AXLE_BORE_CLAMP_PLUGS.md` for dimensions, printing, dry fitting, vent sealing, filling, tuning, and lead-safety guidance.
 
 ## Physics and final sizes
 
@@ -118,7 +118,8 @@ The generator requires Python with `numpy`, `trimesh`, `manifold3d`, and `matplo
 - `Spool_Insert_60deg_A.stl` / `B.stl`
 - `Low_Profile_Rope_Hook_6p2mm_Post.stl`
 - `Low_Profile_Rope_Hook_4p0mm_Post.stl`
-- `Axle_Bore_Clamp_Plugs_print_1set.stl` — one rigid male/female screw-together cap set.
+- `Axle_Bore_Clamp_Plug_MALE_print_1x.stl` — hollow male threaded sleeve cap with centered resin vent.
+- `Axle_Bore_Clamp_Plug_FEMALE_print_1x.stl` — hollow female threaded sleeve cap with centered resin vent.
 - `generate_spool_inserts.py` — editable parametric CAD source.
 - `generate_rope_hook.py` — editable source, validation, and preview generator for the hook accessories.
 - `generate_axle_bore_clamp_plugs.py` — editable source, fit validation, and preview generator for the clamping bore caps.

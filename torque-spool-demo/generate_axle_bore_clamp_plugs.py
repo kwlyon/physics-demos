@@ -2,9 +2,9 @@
 
 The supplied male and female spool halves assemble to 112.0 mm between their
 outside wheel faces and share a nominal 36.0 mm through-bore. This generator
-exports one STL containing a male cap and a female cap. Thin annular sleeves
-follow the bore wall and thread together near the middle, leaving the axial
-core available for lead shot while clamping both end flanges against the spool.
+exports separate male and female STL files. Thin annular sleeves follow the
+bore wall and thread together near the middle, leaving the axial core available
+for lead shot while clamping both end flanges against the spool.
 """
 
 from __future__ import annotations
@@ -24,7 +24,8 @@ from manifold3d import CrossSection, FillRule, Manifold
 
 
 ROOT = Path(__file__).resolve().parent
-OUTPUT_STL = ROOT / "Axle_Bore_Clamp_Plugs_print_1set.stl"
+MALE_OUTPUT_STL = ROOT / "Axle_Bore_Clamp_Plug_MALE_print_1x.stl"
+FEMALE_OUTPUT_STL = ROOT / "Axle_Bore_Clamp_Plug_FEMALE_print_1x.stl"
 VALIDATION_JSON = ROOT / "axle_bore_clamp_plug_validation.json"
 RENDER_PATH = ROOT / "renders" / "axle_bore_clamp_plugs.png"
 
@@ -38,6 +39,7 @@ class ClampPlugSpec:
     flange_diameter_mm: float = 44.0
     flange_thickness_mm: float = 5.0
     sealed_end_wall_mm: float = 3.0
+    vent_hole_diameter_mm: float = 2.0
     flange_sides: int = 12
     sleeve_reach_from_flange_mm: float = 66.0
     male_thread_tube_inner_diameter_mm: float = 23.8
@@ -49,7 +51,6 @@ class ClampPlugSpec:
     male_shoulder_start_from_outer_face_mm: float = 48.0
     thread_start_from_outer_face_mm: float = 49.5
     thread_end_from_outer_face_mm: float = 69.5
-    pair_center_spacing_mm: float = 58.0
     circular_segments: int = 128
     thread_divisions_per_turn: int = 90
 
@@ -168,7 +169,13 @@ def make_male_cap() -> Manifold:
         tube_inner_r,
         thread_z0,
     )
-    body -= cavity
+    vent = cylinder(
+        SPEC.sealed_end_wall_mm + 1.4,
+        SPEC.vent_hole_diameter_mm / 2,
+        SPEC.vent_hole_diameter_mm / 2,
+        -0.2,
+    )
+    body -= cavity + vent
     return body
 
 
@@ -221,11 +228,21 @@ def make_female_cap() -> Manifold:
         major_r + 0.45,
         tip_z - 1.5,
     )
-    body -= main_cavity + bore + groove + entry
+    vent = cylinder(
+        SPEC.sealed_end_wall_mm + 1.4,
+        SPEC.vent_hole_diameter_mm / 2,
+        SPEC.vent_hole_diameter_mm / 2,
+        -0.2,
+    )
+    body -= main_cavity + bore + groove + entry + vent
     return body
 
 
-def export_manifold(model: Manifold, path: Path) -> trimesh.Trimesh:
+def export_manifold(
+    model: Manifold,
+    path: Path,
+    expected_bodies: int = 1,
+) -> trimesh.Trimesh:
     if model.is_empty() or str(model.status()) != "Error.NoError":
         raise RuntimeError(f"Invalid manifold before export: {model.status()}")
     mesh = model.to_mesh()
@@ -235,7 +252,6 @@ def export_manifold(model: Manifold, path: Path) -> trimesh.Trimesh:
         vertices=vertices,
         faces=faces,
         process=True,
-        validate=True,
     )
 
     # Manifold's threaded boolean can leave coincident two-triangle slivers
@@ -246,9 +262,9 @@ def export_manifold(model: Manifold, path: Path) -> trimesh.Trimesh:
         for component in tri.split(only_watertight=False, repair=False)
         if len(component.faces) > 4 and abs(float(component.volume)) > 0.01
     ]
-    if len(printable) != 2:
+    if len(printable) != expected_bodies:
         raise RuntimeError(
-            f"Expected two printable cap bodies; found {len(printable)}"
+            f"Expected {expected_bodies} printable bodies; found {len(printable)}"
         )
     tri = trimesh.util.concatenate(printable)
     tri.export(path)
@@ -260,14 +276,21 @@ def export_manifold(model: Manifold, path: Path) -> trimesh.Trimesh:
         for component in roundtrip.split(only_watertight=False, repair=False)
         if len(component.faces) > 4 and abs(float(component.volume)) > 0.01
     ]
-    if len(roundtrip_parts) != 2:
+    if len(roundtrip_parts) != expected_bodies:
         raise RuntimeError(
             f"STL round trip produced {len(roundtrip_parts)} printable bodies"
         )
-    if len(roundtrip.split(only_watertight=False, repair=False)) != 2:
+    if (
+        len(roundtrip.split(only_watertight=False, repair=False))
+        != expected_bodies
+    ):
         roundtrip = trimesh.util.concatenate(roundtrip_parts)
         roundtrip.export(path)
         roundtrip = trimesh.load(path, force="mesh", process=True)
+    if not roundtrip.is_watertight or not roundtrip.is_winding_consistent:
+        raise RuntimeError(
+            f"{path.name} failed round-trip watertightness/winding validation"
+        )
     return roundtrip
 
 
@@ -384,6 +407,22 @@ def render_design() -> None:
     ]
     ax1.add_patch(Polygon(male_cavity, closed=True, facecolor="#fff7dc",
                           edgecolor="#9a6700", linewidth=1.1))
+    vent_r = S.vent_hole_diameter_mm / 2
+    ax1.add_patch(plt.Rectangle(
+        (0, -vent_r),
+        S.sealed_end_wall_mm,
+        2 * vent_r,
+        facecolor="white",
+        edgecolor="#9a6700",
+        linewidth=1.0,
+    ))
+    ax1.annotate(
+        f"{S.vent_hole_diameter_mm:.1f} mm vent",
+        xy=(S.sealed_end_wall_mm / 2, 0),
+        xytext=(10, 7),
+        arrowprops={"arrowstyle": "->", "color": "#9a6700"},
+        color="#6b4700",
+    )
     ax1.axhline(S.bore_diameter_mm / 2, color="#d97706", ls="--", lw=1.1)
     ax1.axhline(-S.bore_diameter_mm / 2, color="#d97706", ls="--", lw=1.1)
     ax1.axvspan(S.thread_start_from_outer_face_mm,
@@ -478,11 +517,12 @@ def generate() -> None:
     phase_deg, seated_overlap_mm3 = validate_seated_fit(male, female)
     thread_path_overlap_mm3 = validate_thread_path(male, female, phase_deg)
 
-    half_spacing = SPEC.pair_center_spacing_mm / 2
-    print_set = male.translate((-half_spacing, 0, 0))
-    print_set += female.translate((half_spacing, 0, 0))
-    tri = export_manifold(print_set, OUTPUT_STL)
-    components = tri.split(only_watertight=False, repair=False)
+    male_tri = export_manifold(male, MALE_OUTPUT_STL)
+    female_tri = export_manifold(female, FEMALE_OUTPUT_STL)
+    output_meshes = {
+        "male": (MALE_OUTPUT_STL, male_tri),
+        "female": (FEMALE_OUTPUT_STL, female_tri),
+    }
 
     sleeve_overlap = (
         2 * SPEC.sleeve_reach_from_flange_mm
@@ -506,14 +546,32 @@ def generate() -> None:
             "assembled_outside_face_spacing_mm": 112.0,
         },
         "specification": asdict(SPEC),
-        "output_file": OUTPUT_STL.name,
-        "vertices": int(len(tri.vertices)),
-        "triangles": int(len(tri.faces)),
-        "body_count": int(len(components)),
-        "watertight": bool(tri.is_watertight),
-        "winding_consistent": bool(tri.is_winding_consistent),
-        "mesh_extents_mm": tri.extents.tolist(),
-        "volume_set_mm3": float(abs(tri.volume)),
+        "output_files": [MALE_OUTPUT_STL.name, FEMALE_OUTPUT_STL.name],
+        "parts": {
+            name: {
+                "output_file": path.name,
+                "vertices": int(len(mesh.vertices)),
+                "triangles": int(len(mesh.faces)),
+                "body_count": int(
+                    len(mesh.split(only_watertight=False, repair=False))
+                ),
+                "watertight": bool(mesh.is_watertight),
+                "winding_consistent": bool(mesh.is_winding_consistent),
+                "mesh_extents_mm": mesh.extents.tolist(),
+                "volume_mm3": float(abs(mesh.volume)),
+            }
+            for name, (path, mesh) in output_meshes.items()
+        },
+        "body_count_total": 2,
+        "both_parts_watertight": all(
+            mesh.is_watertight for _, mesh in output_meshes.values()
+        ),
+        "both_parts_winding_consistent": all(
+            mesh.is_winding_consistent for _, mesh in output_meshes.values()
+        ),
+        "volume_set_mm3": sum(
+            float(abs(mesh.volume)) for _, mesh in output_meshes.values()
+        ),
         "sleeve_radial_clearance_mm": (
             SPEC.bore_diameter_mm - SPEC.sleeve_outer_diameter_mm
         ) / 2,
@@ -522,6 +580,8 @@ def generate() -> None:
         "minimum_continuous_shot_diameter_mm": (
             SPEC.male_thread_tube_inner_diameter_mm
         ),
+        "centered_vent_hole_diameter_mm": SPEC.vent_hole_diameter_mm,
+        "vent_holes_require_sealing_before_filling": True,
         "available_bore_void_mm3": available_bore_void_mm3,
         "available_bore_void_percent": (
             100.0 * available_bore_void_mm3 / bore_volume_mm3
@@ -537,10 +597,11 @@ def generate() -> None:
     )
     render_design()
 
-    print(
-        f"wrote {OUTPUT_STL.name}: {len(tri.vertices)} vertices, "
-        f"{len(tri.faces)} triangles, {len(components)} bodies"
-    )
+    for name, (path, mesh) in output_meshes.items():
+        print(
+            f"wrote {path.name} ({name}): {len(mesh.vertices)} vertices, "
+            f"{len(mesh.faces)} triangles, 1 body"
+        )
     print(
         f"seated sleeves overlap {sleeve_overlap:.1f} mm; "
         f"best thread phase {phase_deg:.1f} degrees; "
