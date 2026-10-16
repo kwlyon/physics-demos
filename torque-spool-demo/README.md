@@ -4,6 +4,8 @@ This directory contains five reusable, two-piece insert sets for the supplied sp
 
 It also includes two low-profile rope-hook accessories. Their tapered J-shaped noses thread beside the recessed anchor post and rotate around it; the tangent tail then lies back against the winding surface. A raised 5.2 mm eyelet on the tail provides an easier place to tie the rope. Use the 6.2 mm-post hook for the original spool and the 30°/40°/45°/50° inserts, and the 4.0 mm-post hook for the thinner 60° insert. See `ROPE_HOOK.md` for installation and printing details.
 
+For demonstrations needing more mass near the rotation axis, `Axle_Bore_Clamp_Plugs_print_1set.stl` contains a rigid male/female cap set for the original spool's 36.0 mm through-bore. Long central stems screw together inside the assembled spool, clamping thick stop flanges against both outside wheel faces so the caps cannot work loose independently. See `AXLE_BORE_CLAMP_PLUGS.md` for dimensions, printing, dry fitting, filling, tuning, and lead-safety guidance.
+
 ## Physics and final sizes
 
 With both supplied TPU tires installed, the measured outer rolling-wheel diameter is $D = 185.0\,\mathrm{mm}$, giving an outer rolling radius of $R = 92.5\,\mathrm{mm}$.
@@ -116,14 +118,17 @@ The generator requires Python with `numpy`, `trimesh`, `manifold3d`, and `matplo
 - `Spool_Insert_60deg_A.stl` / `B.stl`
 - `Low_Profile_Rope_Hook_6p2mm_Post.stl`
 - `Low_Profile_Rope_Hook_4p0mm_Post.stl`
+- `Axle_Bore_Clamp_Plugs_print_1set.stl` — one rigid male/female screw-together cap set.
 - `generate_spool_inserts.py` — editable parametric CAD source.
 - `generate_rope_hook.py` — editable source, validation, and preview generator for the hook accessories.
+- `generate_axle_bore_clamp_plugs.py` — editable source, fit validation, and preview generator for the clamping bore caps.
 - `validate_spool_inserts.py` — independent validation of exported STLs and source-spool intersections.
 - `render_spool_inserts.py` — reproducible inspection renders.
 - `DIMENSIONAL_INSPECTION.md` — measured source geometry and anchor analysis.
 - `VALIDATION.md` and `validation_report.json` — human-readable and machine-readable results.
 - `design_manifest.json` — exact dimensions, labels, and part metadata.
 - `ROPE_HOOK.md` and `rope_hook_validation.json` — hook instructions and generated mesh checks.
+- `AXLE_BORE_CLAMP_PLUGS.md` and `axle_bore_clamp_plug_validation.json` — cap dimensions, fit, printing, filling, safety notes, and mesh checks.
 - `output/pdf/torque_spool_physics_walkthrough.pdf` — illustrated physics handout linked from the 45° example above.
 - `output/pdf/torque_spool_physics_walkthrough.tex` — editable LaTeX and TikZ source for the handout.
 - `Spool_Paradox_Bambu_Print_Kit/` — the original supplied spool STLs, OpenSCAD source, preview, and assembly README.

@@ -1,0 +1,48 @@
+{
+  "units": "mm",
+  "source_dimensions": {
+    "bore_diameter_mm": 36.0,
+    "assembled_outside_face_spacing_mm": 112.0
+  },
+  "specification": {
+    "bore_diameter_mm": 36.0,
+    "assembled_outside_face_spacing_mm": 112.0,
+    "guide_shank_diameter_mm": 35.4,
+    "guide_shank_length_mm": 14.0,
+    "guide_tip_diameter_mm": 34.0,
+    "flange_diameter_mm": 44.0,
+    "flange_thickness_mm": 5.0,
+    "flange_sides": 12,
+    "stem_length_from_flange_mm": 66.0,
+    "male_stem_root_diameter_mm": 10.8,
+    "female_stem_outer_diameter_mm": 21.0,
+    "thread_pitch_mm": 3.5,
+    "male_thread_major_diameter_mm": 13.0,
+    "female_thread_minor_diameter_mm": 12.4,
+    "female_thread_major_diameter_mm": 14.8,
+    "thread_start_from_outer_face_mm": 48.5,
+    "thread_end_from_outer_face_mm": 69.5,
+    "pair_center_spacing_mm": 58.0,
+    "circular_segments": 128,
+    "thread_divisions_per_turn": 30
+  },
+  "output_file": "Axle_Bore_Clamp_Plugs_print_1set.stl",
+  "vertices": 14991,
+  "triangles": 29974,
+  "body_count": 2,
+  "watertight": true,
+  "winding_consistent": true,
+  "mesh_extents_mm": [
+    102.0,
+    44.0,
+    71.0
+  ],
+  "volume_set_mm3": 61733.86531218313,
+  "guide_radial_clearance_mm": 0.3000000000000007,
+  "stem_overlap_when_seated_mm": 20.0,
+  "thread_engagement_when_seated_mm": 17.0,
+  "best_seated_thread_phase_deg": 54.0,
+  "best_seated_mesh_overlap_mm3": 0.043676840435508936,
+  "max_thread_path_mesh_overlap_mm3": 0.043747901096321616,
+  "thread_path_clearance_check_passed": true
+}
