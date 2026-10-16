@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "design_intent": "Thread the tapered J tip beside the post, rotate around the post, and lay the eyelet tail tangent to the spool.",
+  "parts": [
+    {
+      "file": "Low_Profile_Rope_Hook_6p2mm_Post.stl",
+      "post_diameter_mm": 6.2,
+      "post_radial_clearance_mm": 0.25,
+      "hook_inner_radius_mm": 3.35,
+      "tapered_leading_tip_mm": 0.65,
+      "anchor_entry_gap_mm": 0.9,
+      "tangent_plate_radial_thickness_mm": 1.8,
+      "axial_width_mm": 10.0,
+      "eye_clear_diameter_mm": 5.2,
+      "eye_projection_beyond_plate_mm": 2.15,
+      "spool_surface_relative_y_mm": 4.0,
+      "plate_inner_face_relative_y_mm": 4.1,
+      "vertices": 1369,
+      "triangles": 2738,
+      "volume_mm3": 818.0484497422677,
+      "bounds_mm": [
+        [
+          -4.737278938293457,
+          -4.949725151062012,
+          -5.0
+        ],
+        [
+          29.0,
+          8.050000190734863,
+          5.0
+        ]
+      ],
+      "checks": {
+        "watertight": true,
+        "winding_consistent": true,
+        "one_connected_body": true,
+        "positive_volume": true,
+        "tip_fits_measured_entry_gap": true,
+        "eye_clearance_suitable_for_2_to_3_mm_cord": true
+      }
+    },
+    {
+      "file": "Low_Profile_Rope_Hook_4p0mm_Post.stl",
+      "post_diameter_mm": 4.0,
+      "post_radial_clearance_mm": 0.25,
+      "hook_inner_radius_mm": 2.25,
+      "tapered_leading_tip_mm": 0.65,
+      "anchor_entry_gap_mm": 0.9,
+      "tangent_plate_radial_thickness_mm": 1.8,
+      "axial_width_mm": 10.0,
+      "eye_clear_diameter_mm": 5.2,
+      "eye_projection_beyond_plate_mm": 2.15,
+      "spool_surface_relative_y_mm": 2.9,
+      "plate_inner_face_relative_y_mm": 3.0,
+      "vertices": 1359,
+      "triangles": 2718,
+      "volume_mm3": 699.3738172187932,
+      "bounds_mm": [
+        [
+          -3.4446909427642822,
+          -3.599799871444702,
+          -5.0
+        ],
+        [
+          29.0,
+          6.949999809265137,
+          5.0
+        ]
+      ],
+      "checks": {
+        "watertight": true,
+        "winding_consistent": true,
+        "one_connected_body": true,
+        "positive_volume": true,
+        "tip_fits_measured_entry_gap": true,
+        "eye_clearance_suitable_for_2_to_3_mm_cord": true
+      }
+    }
+  ],
+  "physical_test_required": true,
+  "unperformed_test": "A printed hook has not been physically threaded through the anchor entry."
+}

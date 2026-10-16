@@ -1,0 +1,11 @@
+*.stl binary
+*.png binary
+*.zip binary
+*.md text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.scad text eol=lf
+*.txt text eol=lf
+*.toml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf

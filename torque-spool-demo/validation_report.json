@@ -1,0 +1,461 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "source_geometry": {
+    "tire_outer_radius_mm": 92.50004677193898,
+    "tire_inner_radius_mm": 87.99996266163981,
+    "tire_axial_width_mm": 8.0,
+    "plastic_flange_radius_mm": 90.00004262776768,
+    "winding_drum_radius_mm": 39.0,
+    "winding_drum_diameter_mm": 78.0,
+    "assembled_outer_face_spacing_mm": 112.0,
+    "flange_inner_faces_global_z_mm": [
+      9.0,
+      103.0
+    ],
+    "axial_space_between_flange_inner_faces_mm": 94.0,
+    "male_connector": "r=29.0 mm, local z=56..69 mm",
+    "female_connector": "socket inner r\u224829.38 mm, local z=42.7..56 mm",
+    "original_anchor": {
+      "angular_location": "+Y",
+      "bay_width_x_mm": 22.0,
+      "bay_axial_span_local_male_z_mm": [
+        30.5,
+        50.5
+      ],
+      "bay_radial_floor_y_mm": 29.0,
+      "post_axis_xy_mm": [
+        0.0,
+        35.0
+      ],
+      "post_diameter_mm": 6.2,
+      "description": "Recessed radial bay with an axial captive post"
+    },
+    "source_meshes_watertight_after_vertex_weld": {
+      "tire": true,
+      "male": true,
+      "female": true
+    }
+  },
+  "design_convention": {
+    "radius_labels": "cylindrical winding surface radius",
+    "cord_centerline_correction": "r_centerline = r_surface + cord_diameter/2",
+    "first_layer_only": true
+  },
+  "analytic_fit_checks": {
+    "insert_bore_radius_mm": 39.25,
+    "measured_spool_radius_mm": 39.0,
+    "nominal_radial_clearance_mm": 0.25,
+    "insert_width_mm": 91.0,
+    "available_axial_width_mm": 94.0,
+    "anti_rotation_keys_fit_original_bay": true,
+    "key_global_z_span_mm": [
+      34.5,
+      46.5
+    ],
+    "key_x_extents_within_bay_mm": [
+      -10.5,
+      -8.0,
+      8.0,
+      10.5
+    ]
+  },
+  "parts": [
+    {
+      "file": "Spool_Insert_30deg_A.stl",
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_components": 1,
+      "positive_volume": true,
+      "target_winding_radius_mm": 80.10734985006059,
+      "measured_max_winding_radius_mm": 80.10735364871603,
+      "radius_error_mm": 3.7986554417557272e-06,
+      "source_spool_intersection_mm3": 0.0,
+      "minimum_gap_to_source_spool_mm": 0.24993556438389758,
+      "label": "30\u00b0 FROM HORIZONTAL | r=80.1 mm",
+      "label_removed_volume_mm3": 231.59939275227953,
+      "outer_label_removed_volume_mm3": 1315.5493067415664,
+      "has_anchor": true,
+      "bounds_mm": [
+        [
+          -80.10588073730469,
+          -4.449999809265137,
+          0.0
+        ],
+        [
+          80.10588073730469,
+          80.10735321044922,
+          91.0
+        ]
+      ]
+    },
+    {
+      "file": "Spool_Insert_30deg_B.stl",
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_components": 1,
+      "positive_volume": true,
+      "target_winding_radius_mm": 80.10734985006059,
+      "measured_max_winding_radius_mm": 80.10735364871603,
+      "radius_error_mm": 3.7986554417557272e-06,
+      "source_spool_intersection_mm3": 0.0,
+      "minimum_gap_to_source_spool_mm": 0.24993556438389758,
+      "label": "30\u00b0 FROM HORIZONTAL | r=80.1 mm",
+      "label_removed_volume_mm3": 231.59939275227953,
+      "outer_label_removed_volume_mm3": 1315.5493067415664,
+      "has_anchor": false,
+      "bounds_mm": [
+        [
+          -80.10588073730469,
+          -80.10735321044922,
+          0.0
+        ],
+        [
+          80.10588073730469,
+          -0.15000000596046448,
+          91.0
+        ]
+      ]
+    },
+    {
+      "file": "Spool_Insert_40deg_A.stl",
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_components": 1,
+      "positive_volume": true,
+      "target_winding_radius_mm": 70.85911098850546,
+      "measured_max_winding_radius_mm": 70.8591148477889,
+      "radius_error_mm": 3.859283438600869e-06,
+      "source_spool_intersection_mm3": 0.0,
+      "minimum_gap_to_source_spool_mm": 0.24993556438389758,
+      "label": "40\u00b0 FROM HORIZONTAL | r=70.9 mm",
+      "label_removed_volume_mm3": 230.57519097492332,
+      "outer_label_removed_volume_mm3": 1218.1320346780703,
+      "has_anchor": true,
+      "bounds_mm": [
+        [
+          -70.85763549804688,
+          -4.449999809265137,
+          0.0
+        ],
+        [
+          70.85763549804688,
+          70.8591079711914,
+          91.0
+        ]
+      ]
+    },
+    {
+      "file": "Spool_Insert_40deg_B.stl",
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_components": 1,
+      "positive_volume": true,
+      "target_winding_radius_mm": 70.85911098850546,
+      "measured_max_winding_radius_mm": 70.8591148477889,
+      "radius_error_mm": 3.859283438600869e-06,
+      "source_spool_intersection_mm3": 0.0,
+      "minimum_gap_to_source_spool_mm": 0.24993556438389758,
+      "label": "40\u00b0 FROM HORIZONTAL | r=70.9 mm",
+      "label_removed_volume_mm3": 230.57519097498152,
+      "outer_label_removed_volume_mm3": 1218.1320346780703,
+      "has_anchor": false,
+      "bounds_mm": [
+        [
+          -70.85763549804688,
+          -70.8591079711914,
+          0.0
+        ],
+        [
+          70.85763549804688,
+          -0.15000000596046448,
+          91.0
+        ]
+      ]
+    },
+    {
+      "file": "Spool_Insert_45deg_A.stl",
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_components": 1,
+      "positive_volume": true,
+      "target_winding_radius_mm": 65.40737725975565,
+      "measured_max_winding_radius_mm": 65.4073809833424,
+      "radius_error_mm": 3.7235867580420745e-06,
+      "source_spool_intersection_mm3": 0.0,
+      "minimum_gap_to_source_spool_mm": 0.24993556438389758,
+      "label": "45\u00b0 FROM HORIZONTAL | r=65.4 mm",
+      "label_removed_volume_mm3": 230.6492711644387,
+      "outer_label_removed_volume_mm3": 1154.342441723973,
+      "has_anchor": true,
+      "bounds_mm": [
+        [
+          -65.4059066772461,
+          -4.449999809265137,
+          0.0
+        ],
+        [
+          65.4059066772461,
+          65.40737915039062,
+          91.0
+        ]
+      ]
+    },
+    {
+      "file": "Spool_Insert_45deg_B.stl",
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_components": 1,
+      "positive_volume": true,
+      "target_winding_radius_mm": 65.40737725975565,
+      "measured_max_winding_radius_mm": 65.4073809833424,
+      "radius_error_mm": 3.7235867580420745e-06,
+      "source_spool_intersection_mm3": 0.0,
+      "minimum_gap_to_source_spool_mm": 0.24993556438389758,
+      "label": "45\u00b0 FROM HORIZONTAL | r=65.4 mm",
+      "label_removed_volume_mm3": 230.64927116438048,
+      "outer_label_removed_volume_mm3": 1154.342441723973,
+      "has_anchor": false,
+      "bounds_mm": [
+        [
+          -65.4059066772461,
+          -65.40737915039062,
+          0.0
+        ],
+        [
+          65.4059066772461,
+          -0.15000000596046448,
+          91.0
+        ]
+      ]
+    },
+    {
+      "file": "Spool_Insert_50deg_A.stl",
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_components": 1,
+      "positive_volume": true,
+      "target_winding_radius_mm": 59.45785389600489,
+      "measured_max_winding_radius_mm": 59.457855845243536,
+      "radius_error_mm": 1.9492386442721e-06,
+      "source_spool_intersection_mm3": 0.0,
+      "minimum_gap_to_source_spool_mm": 0.24993556438389758,
+      "label": "50\u00b0 FROM HORIZONTAL | r=59.5 mm",
+      "label_removed_volume_mm3": 232.26869299123064,
+      "outer_label_removed_volume_mm3": 1090.0504159099655,
+      "has_anchor": true,
+      "bounds_mm": [
+        [
+          -59.456382751464844,
+          -4.449999809265137,
+          0.0
+        ],
+        [
+          59.456382751464844,
+          59.457855224609375,
+          91.0
+        ]
+      ]
+    },
+    {
+      "file": "Spool_Insert_50deg_B.stl",
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_components": 1,
+      "positive_volume": true,
+      "target_winding_radius_mm": 59.45785389600489,
+      "measured_max_winding_radius_mm": 59.457855845243536,
+      "radius_error_mm": 1.9492386442721e-06,
+      "source_spool_intersection_mm3": 0.0,
+      "minimum_gap_to_source_spool_mm": 0.24993556438389758,
+      "label": "50\u00b0 FROM HORIZONTAL | r=59.5 mm",
+      "label_removed_volume_mm3": 232.26869299123064,
+      "outer_label_removed_volume_mm3": 1090.0504159100237,
+      "has_anchor": false,
+      "bounds_mm": [
+        [
+          -59.456382751464844,
+          -59.457855224609375,
+          0.0
+        ],
+        [
+          59.456382751464844,
+          -0.15000000596046448,
+          91.0
+        ]
+      ]
+    },
+    {
+      "file": "Spool_Insert_60deg_A.stl",
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_components": 1,
+      "positive_volume": true,
+      "target_winding_radius_mm": 46.25000000000001,
+      "measured_max_winding_radius_mm": 46.25000169765554,
+      "radius_error_mm": 1.6976555343717337e-06,
+      "source_spool_intersection_mm3": 0.0,
+      "minimum_gap_to_source_spool_mm": 0.24993556438389758,
+      "label": "60\u00b0 FROM HORIZONTAL | r=46.3 mm",
+      "label_removed_volume_mm3": 232.30979482126713,
+      "outer_label_removed_volume_mm3": 926.046933287289,
+      "has_anchor": true,
+      "bounds_mm": [
+        [
+          -46.24852752685547,
+          -4.449999809265137,
+          0.0
+        ],
+        [
+          46.24852752685547,
+          46.25,
+          91.0
+        ]
+      ]
+    },
+    {
+      "file": "Spool_Insert_60deg_B.stl",
+      "watertight": true,
+      "winding_consistent": true,
+      "connected_components": 1,
+      "positive_volume": true,
+      "target_winding_radius_mm": 46.25000000000001,
+      "measured_max_winding_radius_mm": 46.25000169765554,
+      "radius_error_mm": 1.6976555343717337e-06,
+      "source_spool_intersection_mm3": 0.0,
+      "minimum_gap_to_source_spool_mm": 0.24993556438389758,
+      "label": "60\u00b0 FROM HORIZONTAL | r=46.3 mm",
+      "label_removed_volume_mm3": 232.30979482128168,
+      "outer_label_removed_volume_mm3": 926.0469332872744,
+      "has_anchor": false,
+      "bounds_mm": [
+        [
+          -46.24852752685547,
+          -46.25,
+          0.0
+        ],
+        [
+          46.24852752685547,
+          -0.15000000596046448,
+          91.0
+        ]
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "angle_deg": 30,
+      "target_radius_mm": 80.10734985006059,
+      "nominal_radial_shell_thickness_mm": 40.85734985006059,
+      "minimum_local_back_wall_mm": 1.2,
+      "plug_base_diameter_mm": 4.2,
+      "plug_tip_diameter_mm": 3.6,
+      "plug_socket_diameter_mm": 4.6,
+      "plug_radial_clearance_mm": 0.19999999999999973,
+      "plug_length_mm": 5.0,
+      "plug_socket_depth_mm": 5.35,
+      "engraving_depth_mm": 2.0,
+      "outer_engraving_depth_mm": 0.8,
+      "assembled_A_B_overlap_mm3": 0.0,
+      "minimum_A_B_clearance_mm": 0.2586208879165674,
+      "radial_clearance_to_plastic_flange_mm": 9.892650149939413,
+      "radial_clearance_to_tire_mm": 12.392650149939413,
+      "axial_clearance_each_flange_mm": 1.5,
+      "anchor_bay_depth_mm": 9.0,
+      "anchor_post_diameter_mm": 6.2,
+      "plug_features": "4 tapered plugs on A; 4 flared straight sockets on B; no detents"
+    },
+    {
+      "angle_deg": 40,
+      "target_radius_mm": 70.85911098850546,
+      "nominal_radial_shell_thickness_mm": 31.609110988505464,
+      "minimum_local_back_wall_mm": 1.2,
+      "plug_base_diameter_mm": 4.2,
+      "plug_tip_diameter_mm": 3.6,
+      "plug_socket_diameter_mm": 4.6,
+      "plug_radial_clearance_mm": 0.19999999999999973,
+      "plug_length_mm": 5.0,
+      "plug_socket_depth_mm": 5.35,
+      "engraving_depth_mm": 2.0,
+      "outer_engraving_depth_mm": 0.8,
+      "assembled_A_B_overlap_mm3": 0.0,
+      "minimum_A_B_clearance_mm": 0.2586208879165674,
+      "radial_clearance_to_plastic_flange_mm": 19.140889011494536,
+      "radial_clearance_to_tire_mm": 21.640889011494536,
+      "axial_clearance_each_flange_mm": 1.5,
+      "anchor_bay_depth_mm": 9.0,
+      "anchor_post_diameter_mm": 6.2,
+      "plug_features": "4 tapered plugs on A; 4 flared straight sockets on B; no detents"
+    },
+    {
+      "angle_deg": 45,
+      "target_radius_mm": 65.40737725975565,
+      "nominal_radial_shell_thickness_mm": 26.15737725975565,
+      "minimum_local_back_wall_mm": 1.2,
+      "plug_base_diameter_mm": 4.2,
+      "plug_tip_diameter_mm": 3.6,
+      "plug_socket_diameter_mm": 4.6,
+      "plug_radial_clearance_mm": 0.19999999999999973,
+      "plug_length_mm": 5.0,
+      "plug_socket_depth_mm": 5.35,
+      "engraving_depth_mm": 2.0,
+      "outer_engraving_depth_mm": 0.8,
+      "assembled_A_B_overlap_mm3": 0.0,
+      "minimum_A_B_clearance_mm": 0.2586208879165674,
+      "radial_clearance_to_plastic_flange_mm": 24.59262274024435,
+      "radial_clearance_to_tire_mm": 27.09262274024435,
+      "axial_clearance_each_flange_mm": 1.5,
+      "anchor_bay_depth_mm": 9.0,
+      "anchor_post_diameter_mm": 6.2,
+      "plug_features": "4 tapered plugs on A; 4 flared straight sockets on B; no detents"
+    },
+    {
+      "angle_deg": 50,
+      "target_radius_mm": 59.45785389600489,
+      "nominal_radial_shell_thickness_mm": 20.20785389600489,
+      "minimum_local_back_wall_mm": 1.2,
+      "plug_base_diameter_mm": 4.2,
+      "plug_tip_diameter_mm": 3.6,
+      "plug_socket_diameter_mm": 4.6,
+      "plug_radial_clearance_mm": 0.19999999999999973,
+      "plug_length_mm": 5.0,
+      "plug_socket_depth_mm": 5.35,
+      "engraving_depth_mm": 2.0,
+      "outer_engraving_depth_mm": 0.8,
+      "assembled_A_B_overlap_mm3": 0.0,
+      "minimum_A_B_clearance_mm": 0.2586208879165674,
+      "radial_clearance_to_plastic_flange_mm": 30.54214610399511,
+      "radial_clearance_to_tire_mm": 33.04214610399511,
+      "axial_clearance_each_flange_mm": 1.5,
+      "anchor_bay_depth_mm": 9.0,
+      "anchor_post_diameter_mm": 6.2,
+      "plug_features": "4 tapered plugs on A; 4 flared straight sockets on B; no detents"
+    },
+    {
+      "angle_deg": 60,
+      "target_radius_mm": 46.25000000000001,
+      "nominal_radial_shell_thickness_mm": 7.000000000000007,
+      "minimum_local_back_wall_mm": 1.2,
+      "plug_base_diameter_mm": 4.2,
+      "plug_tip_diameter_mm": 3.6,
+      "plug_socket_diameter_mm": 4.6,
+      "plug_radial_clearance_mm": 0.19999999999999973,
+      "plug_length_mm": 5.0,
+      "plug_socket_depth_mm": 5.35,
+      "engraving_depth_mm": 2.0,
+      "outer_engraving_depth_mm": 0.8,
+      "assembled_A_B_overlap_mm3": 0.0,
+      "minimum_A_B_clearance_mm": 0.2586208879165674,
+      "radial_clearance_to_plastic_flange_mm": 43.74999999999999,
+      "radial_clearance_to_tire_mm": 46.24999999999999,
+      "axial_clearance_each_flange_mm": 1.5,
+      "anchor_bay_depth_mm": 5.800000000000007,
+      "anchor_post_diameter_mm": 4.000000000000007,
+      "plug_features": "4 tapered plugs on A; 4 flared straight sockets on B; no detents"
+    }
+  ],
+  "unperformed_tests": [
+    "No physical test print or push-fit trial was possible in software.",
+    "Cord diameter was not supplied; labels use the requested surface-radius convention."
+  ]
+}
