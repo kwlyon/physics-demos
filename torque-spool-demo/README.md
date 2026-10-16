@@ -41,7 +41,7 @@ $$
 
 Thus the modeled dimensions reproduce the nominal 45° critical angle before correcting for cord thickness.
 
-> **Illustrated walkthrough:** [Open the complete physics handout (PDF)](output/pdf/torque_spool_physics_walkthrough.pdf), including free-body diagrams, the critical-angle derivation, the 45° numerical check, cord-thickness corrections, and a suggested classroom procedure. The editable [LaTeX/TikZ source](output/pdf/torque_spool_physics_walkthrough.tex) is included alongside it.
+> **Illustrated walkthrough:** [Open the complete physics handout (PDF)](output/pdf/torque_spool_physics_walkthrough.pdf), including correctly applied free-body vectors, a derivation from Newton's translational and rotational laws, the critical-angle geometry, the 45° numerical check, cord-thickness corrections, the static-friction no-slip condition, and a suggested classroom procedure. The editable [LaTeX/TikZ source](output/pdf/torque_spool_physics_walkthrough.tex) is included alongside it.
 
 ### Designed insert sizes
 
