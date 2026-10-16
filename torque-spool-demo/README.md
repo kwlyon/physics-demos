@@ -4,7 +4,7 @@ This directory contains five reusable, two-piece insert sets for the supplied sp
 
 It also includes two low-profile rope-hook accessories. Their tapered J-shaped noses thread beside the recessed anchor post and rotate around it; the tangent tail then lies back against the winding surface. A raised 5.2 mm eyelet on the tail provides an easier place to tie the rope. Use the 6.2 mm-post hook for the original spool and the 30°/40°/45°/50° inserts, and the 4.0 mm-post hook for the thinner 60° insert. See `ROPE_HOOK.md` for installation and printing details.
 
-For demonstrations needing more mass near the rotation axis, `Axle_Bore_Clamp_Plugs_print_1set.stl` contains a rigid male/female cap set for the original spool's 36.0 mm through-bore. Long central stems screw together inside the assembled spool, clamping thick stop flanges against both outside wheel faces so the caps cannot work loose independently. See `AXLE_BORE_CLAMP_PLUGS.md` for dimensions, printing, dry fitting, filling, tuning, and lead-safety guidance.
+For demonstrations needing more mass near the rotation axis, `Axle_Bore_Clamp_Plugs_print_1set.stl` contains a rigid male/female cap set for the original spool's 36.0 mm through-bore. Hollow 35.4 mm sleeves follow the bore wall and screw together near the center, leaving a 30.0 mm shot cavity through most of the spool and a 23.8 mm minimum passage at the thread. Thick outside flanges seal both ends and cannot work loose independently. See `AXLE_BORE_CLAMP_PLUGS.md` for dimensions, printing, dry fitting, filling, tuning, and lead-safety guidance.
 
 ## Physics and final sizes
 
