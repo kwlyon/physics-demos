@@ -6,13 +6,33 @@ It also includes two low-profile rope-hook accessories. Their tapered J-shaped n
 
 ## Physics and final sizes
 
-The measured rolling radius with the TPU tire installed is 92.5 mm. The models use
+With both supplied TPU tires installed, the measured outer rolling-wheel diameter is **185.0 mm**, giving an outer rolling radius of **92.5 mm**.
+
+### Predicting the critical angle
+
+Let `D` be the outside diameter of the tire, `R = D/2` the rolling radius, `r` the winding radius, and `theta_c` the critical pull angle measured above horizontal. At the critical angle, the cord's line of action passes through the spool's contact point with the floor. The pull therefore produces no torque about that contact point. The geometry gives
 
 ```text
-r = 92.5 cos(theta)
+r = R cos(theta_c)
+
+theta_c = cos^-1(r/R) = cos^-1(2r/D)
 ```
 
-where `r` is the smooth cylindrical winding-surface radius and the angle is measured above horizontal.
+Below this angle the spool rolls one way; above it, the torque reverses and the spool rolls the other way. For the most precise experimental prediction, `r` is the radius to the cord's centerline rather than merely the bare insert surface. The labeled insert sizes use the surface-radius convention described below.
+
+### Worked check: 45° insert
+
+For the 45° insert, the tire-on outside diameter is `D = 185.0 mm`, so `R = 92.5 mm`. The designed winding-surface radius is `r = 65.407 mm` (a winding diameter of `130.815 mm`). Substitution gives
+
+```text
+theta_c = cos^-1(r/R)
+        = cos^-1(65.407 mm / 92.5 mm)
+        = 45.00 degrees
+```
+
+Thus the modeled dimensions reproduce the nominal 45° critical angle before correcting for cord thickness.
+
+### Designed insert sizes
 
 | Label | Designed surface radius | Diameter | Nominal shell thickness | Plastic-flange clearance |
 |---:|---:|---:|---:|---:|
