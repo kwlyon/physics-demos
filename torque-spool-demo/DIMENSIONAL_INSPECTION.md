@@ -32,7 +32,7 @@ The anchor is on the +Y side of the male winding cylinder. It is not a simple ho
 - Post diameter 6.2 mm.
 - Approximately 0.9 mm between the post and the outer lip, with a larger capture space behind it.
 
-The insert anchor uses the same angular location, axial location, recessed-bay arrangement, and axial post orientation. The 30°, 40°, and 50° inserts retain a 6.2 mm post. The 60° shell is only 7.0 mm thick, so its bay is 5.8 mm deep and its post is reduced to 4.0 mm diameter while retaining the 0.9 mm entry slot and a 1.2 mm back wall.
+The insert anchor uses the same angular location, axial location, recessed-bay arrangement, and axial post orientation. The 30°, 40°, 45°, and 50° inserts retain a 6.2 mm post. The 60° shell is only 7.0 mm thick, so its bay is 5.8 mm deep and its post is reduced to 4.0 mm diameter while retaining the 0.9 mm entry slot and a 1.2 mm back wall.
 
 ## Interference and access assessment
 
